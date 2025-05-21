@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "6023329b-79d3-4050-a5b7-6bfc91a4ebb4",
+		"name": "Partner Portal Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39134021"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "signup",
+							"item": [
+								{
+									"name": "Signup",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODJjZDEyMmRhYjUwNzk1MTYxNmU0M2YiLCJpYXQiOjE3NDc4MDUxNjcsImV4cCI6MTc0Nzg5MTU2N30.8MvGJLpr_NXZ7uVbSdYIJzj0d6JXOrQonlw0zCmmegc",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"email\": \"harsh123@gmail.com\",\r\n  \"password\": \"Harsh@123\",\r\n  \"username\": \"Harsh123\",\r\n  \"fullName\": \"Harsh Bharadiya\",\r\n  \"role\": \"viewer\"  // Optional\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/auth/signup",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "login",
+							"item": [
+								{
+									"name": "Login",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"harsh123456@gmail.com\",\r\n    \"password\": \"Harsh@123456\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/auth/login",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "all",
+							"item": [
+								{
+									"name": "Get All Users",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODJkNjc4ZDcwYTA5NDMwZGRmYzAwNTAiLCJpYXQiOjE3NDc4MDYwOTMsImV4cCI6MTc0Nzg5MjQ5M30.YT28M0n2Hy537yKV_6aVFuOC82_rAo9xptDNiJiU7zg",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "localhost:3001/api/users/all",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"users",
+												"all"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": ":username",
+							"item": [
+								{
+									"name": "Update User By Username By ADMIN",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODJkNjc4ZDcwYTA5NDMwZGRmYzAwNTAiLCJpYXQiOjE3NDc4MDYxMjYsImV4cCI6MTc0Nzg5MjUyNn0.Nj558F8dn2HRS7SsHr-49A7BNV4nNTSyQ0SuwH81qA4",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\": \"Harsh Bharadiya\",\r\n    \"email\": \"harsh12345678@example.com\"\r\n}"
+										},
+										"url": {
+											"raw": "localhost:3001/api/users/Harsh123456",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"users",
+												"Harsh123456"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete User By ADMIN",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODJkNjc4ZDcwYTA5NDMwZGRmYzAwNTAiLCJpYXQiOjE3NDc4MDYxMjYsImV4cCI6MTc0Nzg5MjUyNn0.Nj558F8dn2HRS7SsHr-49A7BNV4nNTSyQ0SuwH81qA4",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "localhost:3001/api/users/Harsh1234567",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"users",
+												"Harsh1234567"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "validate",
+							"item": [
+								{
+									"name": ":username",
+									"item": [
+										{
+											"name": "Validate Username By ADMIN",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODJkNjc4ZDcwYTA5NDMwZGRmYzAwNTAiLCJpYXQiOjE3NDc4MDYwOTMsImV4cCI6MTc0Nzg5MjQ5M30.YT28M0n2Hy537yKV_6aVFuOC82_rAo9xptDNiJiU7zg",
+														"type": "text"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "localhost:3001/api/users/validate/Harsh123456",
+													"host": [
+														"localhost"
+													],
+													"port": "3001",
+													"path": [
+														"api",
+														"users",
+														"validate",
+														"Harsh123456"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get Logged In User Info",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODJkNjc4ZDcwYTA5NDMwZGRmYzAwNTAiLCJpYXQiOjE3NDc4MDYwOTMsImV4cCI6MTc0Nzg5MjQ5M30.YT28M0n2Hy537yKV_6aVFuOC82_rAo9xptDNiJiU7zg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"password\": \"StrongP@ss123\",\r\n  \"username\": \"johndoe\",\r\n  \"fullName\": \"John Doe\"\r\n}"
+								},
+								"url": {
+									"raw": "localhost:3001/api/users",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
